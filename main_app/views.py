@@ -12,5 +12,8 @@ def home(request):
 def about(request):
     return render(request, 'about.html')
 
+# def base(request):
+#     return render(request, 'base.html')
+
 def test(request):
     return HttpResponse('<h1>TEST PAGE SUCCESS</h1>')
