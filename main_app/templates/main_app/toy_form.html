@@ -1,21 +1,23 @@
-{% extends 'base.html' %}
-{% load static %}
+{% extends 'base.html' %} 
+{% load static %} 
 {% block head %}
   <link rel="stylesheet" href="{% static 'css/form.css' %}" />
-{% endblock %}
+{% endblock %} 
 {% block content %}
   <div class="page-header">
-    {% if cat %}
-    <h1>Edit {{ cat.name }}</h1>
+    {% if object %}
+      <h1>Edit {{object.name}}</h1>
     {% else %}
-    <h1>Add a Cat</h1>
+      <h1>Add a Toy</h1>
     {% endif %}
     <img src="{% static 'images/nerd-cat.svg' %}" alt="A cat using a computer" />
   </div>
-
-  <form action="" method="post" class="form-container">
+  <form action="" method="post" class="form-container" autocomplete="off">
     {% csrf_token %}
-    <table>{{ form.as_table }}</table>
+    <table>
+      {{ form.as_table }}
+    </table>
     <button type="submit" class="btn submit">Submit!</button>
   </form>
+
 {% endblock %}
